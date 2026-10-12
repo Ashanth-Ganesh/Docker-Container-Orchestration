@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated project reports and Docker image archives
+output/
+submission/
+kube_output.txt
+*.tar
