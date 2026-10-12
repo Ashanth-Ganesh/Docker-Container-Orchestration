@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: project3
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project3
+  namespace: project3
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: project3
+  template:
+    metadata:
+      labels:
+        app: project3
+    spec:
+      containers:
+        - name: word-counter
+          image: project3:latest
+          imagePullPolicy: Never
+          # Keep demo replicas alive for monitoring after the program exits.
+          command: ["/bin/sh", "-c"]
+          args: ["python /app/scripts.py && exec sleep infinity"]
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 250m
+              memory: 128Mi
+          readinessProbe:
+            exec:
+              command: ["test", "-s", "/home/data/output/result.txt"]
+            initialDelaySeconds: 1
+            periodSeconds: 2
+          volumeMounts:
+            - name: output
+              mountPath: /home/data/output
+      volumes:
+        - name: output
+          emptyDir: {}

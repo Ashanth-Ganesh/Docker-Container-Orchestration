@@ -1,0 +1,3 @@
+﻿NAME                        READY   STATUS    RESTARTS   AGE
+project3-7bf4867fd9-hxphd   1/1     Running   0          4s
+project3-7bf4867fd9-xxnkd   1/1     Running   0          4s

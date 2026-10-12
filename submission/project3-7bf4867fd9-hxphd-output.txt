@@ -1,0 +1,20 @@
+﻿PROJECT 3: DOCKER
+
+Total words (whitespace-separated, including titles):
+IF.txt: 287
+AlwaysRememberUsThisWay.txt: 223
+Grand total: 510
+
+Top 3 most frequent words in IF.txt:
+and: 20
+you: 18
+if: 14
+
+Top 3 most frequent words in AlwaysRememberUsThisWay.txt (contractions expanded):
+i: 15
+the: 13
+not: 9
+Words after contraction expansion and punctuation removal: 242
+
+IP address (container): 10.1.0.7
+Docker host gateway IP (host.docker.internal): 192.168.65.254
